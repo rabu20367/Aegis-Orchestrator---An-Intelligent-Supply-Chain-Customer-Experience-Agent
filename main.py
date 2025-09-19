@@ -3,8 +3,8 @@
 Main entry point for Aegis Orchestrator.
 
 Authors: 
-- Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
 - Savnvancan (sanworktech@gmail.com)
+- Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
 """
 
 import asyncio

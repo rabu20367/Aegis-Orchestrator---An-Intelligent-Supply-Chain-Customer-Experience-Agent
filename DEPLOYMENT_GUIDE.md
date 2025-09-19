@@ -1,8 +1,8 @@
 # Aegis Orchestrator - Deployment Guide
 
 **Authors:** 
-- Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
 - Savnvancan (sanworktech@gmail.com)
+- Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
 
 ## Quick Start
 
@@ -260,8 +260,8 @@ kubectl apply -f secrets-backup.yaml
 
 ### Contact Information
 - **Authors:** 
-  - Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
   - Savnvancan (sanworktech@gmail.com)
+  - Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
 - **Documentation:** See docs/ directory
 - **Issues:** Create GitHub issue
 
