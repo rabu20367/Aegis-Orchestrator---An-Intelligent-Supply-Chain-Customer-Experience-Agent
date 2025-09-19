@@ -2,8 +2,9 @@
 """
 Main entry point for Aegis Orchestrator.
 
-Author: Savnvancan
-Email: sanworktech@gmail.com
+Authors: 
+- Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
+- Savnvancan (sanworktech@gmail.com)
 """
 
 import asyncio

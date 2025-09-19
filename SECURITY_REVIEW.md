@@ -1,7 +1,8 @@
 # Security Review - Aegis Orchestrator
 
-**Author:** Savnvancan  
-**Email:** sanworktech@gmail.com  
+**Authors:** 
+- Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
+- Savnvancan (sanworktech@gmail.com)  
 **Date:** 2024-09-18
 
 ## Executive Summary
@@ -153,7 +154,9 @@ except Exception as e:
 4. **Lessons Learned:** Update security controls
 
 ### 2. Contact Information
-- **Security Team:** sanworktech@gmail.com
+- **Security Team:** 
+  - Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
+  - Savnvancan (sanworktech@gmail.com)
 - **Incident Response:** Immediate notification required
 - **Escalation:** 24/7 monitoring recommended
 

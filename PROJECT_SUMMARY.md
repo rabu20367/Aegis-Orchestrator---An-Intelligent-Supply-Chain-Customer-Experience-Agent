@@ -1,7 +1,8 @@
 # Aegis Orchestrator - Project Summary
 
-**Author:** Savnvancan  
-**Email:** sanworktech@gmail.com
+**Authors:** 
+- Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
+- Savnvancan (sanworktech@gmail.com)
 
 ## 🎯 Project Overview
 

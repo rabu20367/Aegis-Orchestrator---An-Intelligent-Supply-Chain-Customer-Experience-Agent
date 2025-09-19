@@ -5,8 +5,9 @@
 [![Kubernetes](https://img.shields.io/badge/kubernetes-1.20+-blue.svg)](https://kubernetes.io/)
 [![Google Cloud](https://img.shields.io/badge/google%20cloud-gke-orange.svg)](https://cloud.google.com/kubernetes-engine)
 
-**Author:** Savnvancan  
-**Email:** sanworktech@gmail.com
+**Authors:** 
+- Hasibur Rashid (atm.hasibur.rashid20367@gmail.com)
+- Savnvancan (sanworktech@gmail.com)
 
 ## 🚀 Overview
 
@@ -215,7 +216,10 @@ python auto_demo.py
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## 👨‍💻 Authors
+
+**Hasibur Rashid**  
+Email: atm.hasibur.rashid20367@gmail.com
 
 **Savnvancan**  
 Email: sanworktech@gmail.com
