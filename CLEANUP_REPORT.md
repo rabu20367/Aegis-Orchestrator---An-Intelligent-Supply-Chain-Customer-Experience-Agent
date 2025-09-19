@@ -1,7 +1,7 @@
 # Project Cleanup Report - Aegis Orchestrator
 
-**Author:** Hasibur Rashid  
-**Email:** atm.hasibur.rashid20367@gmail.com  
+**Author:** Savnvancan  
+**Email:** sanworktech@gmail.com  
 **Date:** 2024-09-18
 
 ## Cleanup Summary

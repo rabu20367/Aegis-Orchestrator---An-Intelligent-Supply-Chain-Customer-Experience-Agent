@@ -5,8 +5,8 @@
 [![Kubernetes](https://img.shields.io/badge/kubernetes-1.20+-blue.svg)](https://kubernetes.io/)
 [![Google Cloud](https://img.shields.io/badge/google%20cloud-gke-orange.svg)](https://cloud.google.com/kubernetes-engine)
 
-**Author:** Hasibur Rashid  
-**Email:** atm.hasibur.rashid20367@gmail.com
+**Author:** Savnvancan  
+**Email:** sanworktech@gmail.com
 
 ## 🚀 Overview
 
@@ -217,8 +217,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Hasibur Rashid**  
-Email: atm.hasibur.rashid20367@gmail.com
+**Savnvancan**  
+Email: sanworktech@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -229,7 +229,7 @@ Email: atm.hasibur.rashid20367@gmail.com
 
 ## 📞 Support
 
-For support, email atm.hasibur.rashid20367@gmail.com or create an issue in the repository.
+For support, email sanworktech@gmail.com or create an issue in the repository.
 
 ---
 

@@ -1,7 +1,7 @@
 # Aegis Orchestrator - An Intelligent Supply Chain & Customer Experience Agent
 
-**Author:** Hasibur Rashid  
-**Email:** atm.hasibur.rashid20367@gmail.com
+**Author:** Savnvancan  
+**Email:** sanworktech@gmail.com
 
 ## Overview
 
