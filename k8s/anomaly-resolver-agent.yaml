@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anomaly-resolver-agent
+  namespace: aegis-orchestrator
+  labels:
+    app: anomaly-resolver-agent
+    component: anomaly-resolver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anomaly-resolver-agent
+  template:
+    metadata:
+      labels:
+        app: anomaly-resolver-agent
+        component: anomaly-resolver
+    spec:
+      containers:
+      - name: anomaly-resolver-agent
+        image: aegis-orchestrator/anomaly-resolver-agent:latest
+        ports:
+        - containerPort: 8000
+          name: http
+        env:
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aegis-secrets
+              key: GEMINI_API_KEY
+        - name: GEMINI_MODEL
+          valueFrom:
+            secretKeyRef:
+              name: aegis-secrets
+              key: GEMINI_MODEL
+        - name: MCP_SERVER_HOST
+          value: "mcp-server"
+        - name: MCP_SERVER_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: MCP_SERVER_PORT
+        - name: A2A_BROKER_URL
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: A2A_BROKER_URL
+        - name: REDIS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: REDIS_URL
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: LOG_LEVEL
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: anomaly-resolver-agent
+  namespace: aegis-orchestrator
+  labels:
+    app: anomaly-resolver-agent
+spec:
+  selector:
+    app: anomaly-resolver-agent
+  ports:
+  - port: 8000
+    targetPort: 8000
+    name: http
+  type: ClusterIP

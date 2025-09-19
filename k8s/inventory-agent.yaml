@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-agent
+  namespace: aegis-orchestrator
+  labels:
+    app: inventory-agent
+    component: inventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inventory-agent
+  template:
+    metadata:
+      labels:
+        app: inventory-agent
+        component: inventory
+    spec:
+      containers:
+      - name: inventory-agent
+        image: aegis-orchestrator/inventory-agent:latest
+        ports:
+        - containerPort: 8000
+          name: http
+        env:
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aegis-secrets
+              key: GEMINI_API_KEY
+        - name: GEMINI_MODEL
+          valueFrom:
+            secretKeyRef:
+              name: aegis-secrets
+              key: GEMINI_MODEL
+        - name: MCP_SERVER_HOST
+          value: "mcp-server"
+        - name: MCP_SERVER_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: MCP_SERVER_PORT
+        - name: A2A_BROKER_URL
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: A2A_BROKER_URL
+        - name: REDIS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: REDIS_URL
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: LOG_LEVEL
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-agent
+  namespace: aegis-orchestrator
+  labels:
+    app: inventory-agent
+spec:
+  selector:
+    app: inventory-agent
+  ports:
+  - port: 8000
+    targetPort: 8000
+    name: http
+  type: ClusterIP
